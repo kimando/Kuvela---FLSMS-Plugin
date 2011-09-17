@@ -1,0 +1,5 @@
+org.medicmobile.projects.desktop.kuvela.controllers
+org.medicmobile.projects.desktop.kuvela.controllers.exceptions
+org.medicmobile.projects.desktop.kuvela.entities
+org.medicmobile.projects.desktop.kuvela.reader
+org.medicmobile.projects.desktop.kuvela.ui
