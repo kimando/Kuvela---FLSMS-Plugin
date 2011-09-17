@@ -1,0 +1,41 @@
+Kuvela STK Interface
+
+This is a JPA based project.
+
+It has entity classes for the three Kuvela workflows as well as their controllers.
+Before anything, remember to create the database from the kuvela.sql script
+You need to edit the database server's username and password on the persistence.xml file under Kuvela/build/classes/META-INF
+
+Change to the Kuvela root directory and run ant
+The interface can be run as a stand alone by changing to the Kuvela/dist folder and running.. java -jar Kuvela.jar
+
+Or you can use the Netbeans IDE to open and edit your files
+
+To reuse the interface from other applications you need to call the readMessages() method from the MessageReader class
+With the RXTX libraries configured and the following jar files copied to the jre/lib/ext folder, 
+
+Kuvela.jar
+beansbinding-1.2.1.jar
+eclipselink-2.2.0.jar
+eclipselink-javax.persistence-2.0.jar
+jxl.jar
+log4j-1.2.6.jar
+mysql-connector-java-5.1.13-bin.jar
+RXTXcomm.jar
+
+import org.medicmobile.projects.desktop.kuvela.reader.MessageReader;
+
+and start reading messages like this
+
+try
+{
+	MessageReader reader = new MessageReader("port goes here...");
+	reader.readMessages();
+}
+catch(Exception e)
+{
+	// do something with the exception!!
+}
+
+There are several other public methods good to know about from the org.medicmobile.projects.desktop.kuvela.controllers.KuvelaControllersInterface class
+These are the methods that will be heavily called by the client UI.. thinlets, web pages, swing frames etc
